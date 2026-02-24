@@ -1,0 +1,29 @@
+.hading1
+{
+    color: black;
+    font: 100 16px/28px Poppins, sans-serif;
+    margin-bottom: 5px;
+}
+
+.HelpText
+{
+    color: grey;
+    font: 100 16px/28px Poppins, sans-serif;
+    margin: 0;
+}
+
+.centr
+{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form
+{
+    text-align: start;
+    width: 180px;
+    padding: 30px;
+    background-color: darkorchid;
+}
