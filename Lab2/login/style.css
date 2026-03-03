@@ -1,0 +1,85 @@
+.container 
+{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    max-width: 1400px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0  50px 50px;
+}
+
+.image-section 
+{
+    position: relative;
+    display: flex;    
+    flex: 1;
+    justify-content: flex-end; 
+    padding-right: 50px;
+}
+
+.main-heading 
+{
+    position: absolute;
+    top: -240px;
+    left: 65px;
+    color: black;
+    font: 385 180px bold, sans-serif;
+}
+
+.form-section 
+{
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    padding-left: 50px;
+}
+
+.form-size 
+{
+    width: 343px;
+    height: 171px;
+}
+
+.heading-for-fild
+{
+    display: block;
+    color: black;
+    font: 400 15px Regular, sans-serif;
+    margin-bottom: 5px;
+}
+
+.input-fild-size
+{
+    width: 343px;
+    height: 44px;
+    padding: 13px 12px 13px 12px;
+    margin-bottom: 5px;
+    border: none;
+    background-color: #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.description-for-fild
+{
+    display: block;
+    color: gray;
+    font: 400 13px Regular, sans-serif;
+    margin-bottom: 20px;
+}
+
+.button 
+{
+    width: 343px;
+    height: 48px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font: 500 16px medium, sans-serif;
+    cursor: pointer;
+    margin-top: 20px;
+}
