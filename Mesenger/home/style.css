@@ -15,9 +15,25 @@
 .sidebar-fild 
 {
     display: flex;
+    flex-direction: column;
     width: 72px;
     height: 100%;       
-    background-color: brown;
+    /* background-color: brown; */
+}
+
+.pages-fild
+{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 15px;
+    height: 40px;
+    width: 40px;
+    /* background-color: black; */
+}
+.Smart-button
+{
+    height: 40px;
+    width: 40px;
 }
 
 .collum-fild
