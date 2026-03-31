@@ -20,10 +20,16 @@
 .main-heading 
 {
     position: absolute;
-    top: -240px;
-    left: 65px;
+    top: -200px;
+    left: 125px;
     color: black;
-    font: 385 180px bold, sans-serif;
+    font-family: Golos UI;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 140px;
+    line-height: 180px;
+    letter-spacing: -1.5px;
+
 }
 
 .form-section 

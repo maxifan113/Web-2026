@@ -62,27 +62,30 @@
     height: 123px;
     width: 123px;
     border-radius: 20px;  
+    object-fit: cover;
 }
 
 .user-name
 {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font: 500 32px medium, sans-serif;
-    color: black;
+    font: 500 32px Golos UI, sans-serif;
+    line-height: 32px;
+    letter-spacing: -0.25px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .about-me
 {
     width: 361px;
     padding-bottom: 10px;
-    font: 400 15px Regular, sans-serif;
+    font: 400 15px "Regular", sans-serif;
     color: #222222;  
     text-align: center;
 }
 
 .post-count
 {
+    padding-bottom: 20px;    
     height: 30px;
     width: 101px;
     gap: 6px;
@@ -93,5 +96,15 @@
 {
     display: flex;
     width: 972px;
-    height: 600px; 
+    height: 100vh; 
+    flex-wrap: wrap;
+}
+
+.post-photo
+{
+    width: 322px;
+    height: 322px;
+    border-radius: 2px;
+    padding: 0 0 2px 2px;
+    object-fit: cover;
 }
