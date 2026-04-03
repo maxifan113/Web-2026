@@ -105,6 +105,7 @@
     height: 32px;
     border: none;
     border-radius: 6px;
+    object-fit: cover;
 }
 
 .usser-name-fild

@@ -1,0 +1,11 @@
+$kind: http-request
+name: https://geocode-maps.yandex.ru/1.x/?apikey=429d04ad-5ace-46f1-bf3b-ebba1268a6c6&geocode=Республика
+  Марий Эл&format=json
+url: https://geocode-maps.yandex.ru/1.x/?apikey=429d04ad-5ace-46f1-bf3b-ebba1268a6c6&geocode=Республика
+  Марий Эл&format=json
+method: GET
+queryParams:
+  apikey: 429d04ad-5ace-46f1-bf3b-ebba1268a6c6
+  geocode: Республика Марий Эл
+  format: json
+order: 1774971660782
