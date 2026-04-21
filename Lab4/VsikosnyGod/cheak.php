@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-        <title>Результат</title>
-        <meta charset="UTF-8">
+    <title>Результат</title>
+    <meta charset='UTF-8'>
   </head>
   <body>
     <h1>Результат</h1>
@@ -12,7 +12,7 @@
       $year = (int)$_POST['year'];
       if (is_numeric($year) && $year > 0)
       {
-        if ($year % 4 == 0)
+        if (($year % 4 == 0 && $year % 100 != 0) || ($year % 400 == 0))
         {
           echo 'Год високосный';
         }

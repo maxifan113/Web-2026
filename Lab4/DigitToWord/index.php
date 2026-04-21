@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-        <title>DigitToWord</title>
-        <meta charset="UTF-8">
-        <link href="./style.css" rel="stylesheet">
+    <title>DigitToWord</title>
+    <meta charset='UTF-8'>
   </head>
   <body>
     <h1>Перевод цифры в слово</h1>
-    <form method="POST" >
-      <label for="digit">Введите цифру 0т 0 до 9</label>
-      <input type="number" name="digit" min="0" max="9" id="digit" required>
-      <button type="submit">Перевести</button>
+    <form method='POST'>
+      <label for='digit'>Введите цифру 0т 0 до 9</label>
+      <input type='number' name='digit' min='0' max='9' id='digit' required>
+      <button type='submit'>Перевести</button>
+      <a href="http://localhost/Lab4/">Вернуться</a>
     </form>
 
     <?php
@@ -19,27 +19,27 @@
       switch ($digit) 
       {
         case 0:
-            return 'Ноль';
+          return 'Ноль';
         case 1:
-            return 'Один';
+          return 'Один';
         case 2:
-            return 'Два';
+          return 'Два';
         case 3:
-            return 'Три';
+          return 'Три';
         case 4:
-            return 'Четыре';
+          return 'Четыре';
         case 5:
-            return 'Пять';
+          return 'Пять';
         case 6:
-            return 'Шесть';
+          return 'Шесть';
         case 7:
-            return 'Семь';
+          return 'Семь';
         case 8:
-            return 'Восемь';
+          return 'Восемь';
         case 9:
-            return 'Девять';
+          return 'Девять';
         default:
-            return 'Неверная цифра';
+          return 'Неверная цифра';
       }
     }
     
