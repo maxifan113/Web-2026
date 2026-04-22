@@ -10,6 +10,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
       $year = (int)$_POST['year'];
+      ##В функ
       if (is_numeric($year) && $year > 0)
       {
         if (($year % 4 == 0 && $year % 100 != 0) || ($year % 400 == 0))

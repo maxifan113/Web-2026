@@ -8,7 +8,7 @@
     <h1>Счастливые билеты</h1>
     <form method='POST'>
       <label for='number'>Введите число</label>
-      <input type='number' name='number' min='1' max='20' id='number' required><br>
+      <input type='number' name='number' min='0' max='20' id='number' required><br>
       <button type='submit'>Вычислить</button>
       <a href="http://localhost/Lab4/">Вернуться</a>
     </form>

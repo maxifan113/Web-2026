@@ -68,9 +68,9 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
       $date = $_POST['date'];
-      $dateInMass = explode('-', $date);
-      $day = $dateInMass[2];
-      $months = $dateInMass[1];
+      $dateInArr = explode('-', $date);
+      $day = $dateInArr[2];
+      $months = $dateInArr[1];
       $result = serchZodiac($day, $months);
       echo $result;
     }
