@@ -69,9 +69,16 @@
     {
       $date = $_POST['date'];
       $dateInArr = explode('-', $date);
-      $day = $dateInArr[2];
-      $months = $dateInArr[1];
-      $result = serchZodiac($day, $months);
+      if (count($dateInArr) == 3)
+      {
+        $day = $dateInArr[2];
+        $months = $dateInArr[1];
+        $result = serchZodiac($day, $months);
+      }
+      else
+      {
+        $result = 'Введена не коректная дата';
+      }
       echo $result;
     }
     ?>

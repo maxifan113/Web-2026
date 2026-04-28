@@ -29,7 +29,14 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
       $digit = $_POST['number'];
-      $result = factoria($digit);
+      if (($digit >=0) && ($digit <= 20))
+      {
+        $result = factoria($digit);  
+      }
+      else
+      {
+        $result = 'Введите число от 0 до 20';
+      }
       echo $result;
     }
     ?>

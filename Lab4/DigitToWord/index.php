@@ -16,10 +16,9 @@
     <?php
     function digitToWord($digit): string
     {
+      ## свич на мэч
       switch ($digit) 
       {
-        case 0:
-          return 'Ноль';
         case 1:
           return 'Один';
         case 2:
@@ -46,7 +45,26 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
       $digit = $_POST['digit'];
-      $result = 'Вы ввели цифру: ' . digitToWord($digit);
+      if (($digit >= 0) && ($digit < 10))
+      {    
+        $result = 'Вы ввели цифру: ' . match ($digit) 
+        {
+          '0' => 'ноль',
+          '1' => 'один',
+          '2' => 'два',
+          '3' => 'три',
+          '4' => 'четыре',
+          '5' => 'пять',
+          '6' => 'шесть',
+          '7' => 'семь',
+          '8' => 'восемь',
+          '9' => 'девять',
+        };
+      } 
+      else 
+      {
+        $result = 'Пожалуйста введите цифру от 0 до 9';
+      }
       echo $result;
     }
     ?>

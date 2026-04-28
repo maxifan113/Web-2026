@@ -7,26 +7,36 @@
   <body>
     <h1>Результат</h1>
     <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST')
+    function vesGod($year): string
     {
-      $year = (int)$_POST['year'];
-      ##В функ
       if (is_numeric($year) && $year > 0)
       {
         if (($year % 4 == 0 && $year % 100 != 0) || ($year % 400 == 0))
         {
-          echo 'Год високосный';
+          return 'Год високосный';
         }
         else
         {
-          echo 'Год невисокосный';
+          return 'Год невисокосный';
         }
       }
       elseif ($year == 0)
       {
-        echo 'Вы не ввели год';
+        return 'Вы не ввели год';
       }
-
+    }
+    if ($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+      $year = (int)$_POST['year'];
+      if (($year > 0) && ($year <= 30000))
+      {
+        $result = vesGod($year);
+      }
+      else
+      {
+        $result = 'Введите год в диапозоне от 1 до 30000';
+      }
+      echo $result;
     }
     ?>
     <br>

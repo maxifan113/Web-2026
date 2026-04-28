@@ -1,0 +1,17 @@
+[
+  {
+    "id": "Chunk_1",
+    "section": "Общие положения",
+    "content": "Обьяснение терминов и общие моменты необходимые для понимания документа",
+    "source": "Poriadok-okazaniia-platnykh-obrazovatelnykh-uslug.pdf",
+    "chunk_index": 1
+  },
+  {
+    "id": "Chunk_2",
+    "section": "Порядок заключения договора об оказании образовательных услуг",
+    "content": "Обьяснение терминов и общие моменты необходимые для понимания документа",
+    "source": "Poriadok-okazaniia-platnykh-obrazovatelnykh-uslug.pdf",
+    "chunk_index": 2
+  }
+
+]
