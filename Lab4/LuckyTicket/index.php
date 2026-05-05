@@ -8,9 +8,9 @@
     <h1>Счастливые билеты</h1>
     <form method='POST'>
       <label for='start'>Введите минимальный номер билета</label>
-      <input type='number' name='start' min='100000' max='999999' id='start' required><br>
+      <input type='text' name='start' min='1' max='999999' id='start' required><br>
       <label for='end'>Введите максимальный номер билета</label>
-      <input type='number' name='end' min='100000' max='999999' id='end' required><br>
+      <input type='text' name='end' min='1' max='999999' id='end' required><br>
       <button type='submit'>Найти</button>
       <a href="http://localhost/Lab4/">Вернуться</a>
     </form>
@@ -20,21 +20,33 @@
     {
       $start = $_POST['start'];
       $end = $_POST['end'];
-      if ((strlen($start) == 6) && (strlen($end) == 6))
+      $ind = 0;
+      for ($i = 0; strlen($start) < 6; $i++)
       {
-        for ($i = $start; $i <= $end; $i++)
+        $start = '0' . $start;
+      }
+      for ($i = 0; strlen($end) < 6; $i++)
+      {
+        $end = '0' . $end;
+      }
+      for ($i = $start; $i <= $end; $i++)
+      {
+        $i = (string)$i;
+        for ($j = 0; strlen($i) < 6; $j++)
         {
-          $firstHalf = ((string)$i)[0] + ((string)$i)[1] + ((string)$i)[2];
-          $secondHalf = ((string)$i)[3] + ((string)$i)[4] + ((string)$i)[5];
-          if ($secondHalf == $firstHalf)
-          {
-            echo "Билет номер {$i} счастливый<br>";
-          }
+          $i = '0' . $i;
+        }
+        $firstHalf = ((string)$i)[0] + ((string)$i)[1] + ((string)$i)[2];
+        $secondHalf = ((string)$i)[3] + ((string)$i)[4] + ((string)$i)[5];
+        if ($secondHalf == $firstHalf)
+        {
+          echo "Билет номер {$i} счастливый<br>";
+          $ind = 1;
         }
       }
-      else
+      if ($ind == 0)
       {
-        echo 'Введите число в от 100000 до 999999';
+        echo 'В этом диапозоне нет счастливых билетов';
       }
     }
     ?>

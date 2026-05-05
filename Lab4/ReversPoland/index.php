@@ -16,57 +16,61 @@
     <?php
     function reversePoland($arr): string
     {
-      $result = 0;
-      $i = 0;
+      $stack = [];
       $operations = ['+', '-', '/', '*', '^'];
-      while (count($arr) > 1)
+      
+      foreach ($arr as $elem) 
       {
-        $first = 0;
-        $second = 0;
-        $third = 0;
-        while (!(in_array($third, $operations)))
+        if (is_numeric($elem)) 
         {
-          if ($i + 2 < count($arr))
+          array_push($stack, $elem);
+        }
+        elseif (in_array($elem, $operations)) 
+        {
+          if (count($stack) < 2) 
           {
-            $i = 0;
-          }            
-          $first = $arr[$i];
-          $second = $arr[$i+1];
-          $third = $arr[$i+2];
-          $i++;
-        }
-        $i--;
-        switch ($third)
-        {
-          case '+':
-            $result = $first + $second;
-            break;
-          case '-':
-            $result = $first - $second;
-            break;
-          case '*':
-            $result = $first * $second;
-            break;
-          case '/':
-            if ($second != 0) 
-            {
-              $result = $first / $second;
-            } 
-            else 
-            {
-              $result = 'Ошибка: деление на ноль';
-            }
-            break;
-          case '^':
-            $result = pow($first, $second);
-            break;
-        }
-        $arr[$i] = $result;
-        unset($arr[$i+1]);
-        unset($arr[$i+2]);
-        $arr = array_values($arr);
+            return "Ошибка: недостаточно операндов для операции '$elem'";
+          }
+          $second = array_pop($stack);
+          $first = array_pop($stack);    
+          switch ($elem) {
+            case '+':
+              $result = $first + $second;
+              break;
+            case '-':
+              $result = $first - $second;
+              break;
+            case '*':
+              $result = $first * $second;
+              break;
+            case '/':
+              if ($second != 0) 
+              {
+                $result = $first / $second;
+              } 
+              else 
+              {
+                return "Ошибка: деление на ноль";
+              }
+              break;
+            case '^':
+              $result = pow($first, $second);
+              break;
+            default:
+              return "Ошибка: неизвестная операция '$elem'";
+              }
+            array_push($stack, $result);
+          }
+          else 
+          {
+            return "Ошибка: недопустимый токен '$elem'";
+          }
       }
-      return (string)$result;
+      if (count($stack) !== 1) {
+          return "Ошибка: некорректное выражение, осталось " . count($stack) . " элементов в стеке";
+      }
+      $finalResult = $stack[0];
+      return (string)$finalResult;
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
