@@ -39,7 +39,7 @@
     /* background-color: aqua; */
 }
 
-.Smart-button
+.smart-button
 {
     height: 40px;
     width: 40px;
@@ -78,7 +78,7 @@
 {
     width: 361px;
     padding-bottom: 10px;
-    font: 400 15px "Regular", sans-serif;
+    font: 400 15px Regular, sans-serif;
     color: #222222;  
     text-align: center;
 }

@@ -16,6 +16,7 @@
     </form>
 
     <?php
+    // добавить проверку на число
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
       $start = $_POST['start'];

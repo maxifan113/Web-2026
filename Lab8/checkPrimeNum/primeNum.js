@@ -16,17 +16,23 @@ function checkPrimes()
   let result = document.getElementById('result');
   let primes = [];
   let notPrimes = [];
+  let notDigit = [];
   let resultstr = '';
   for (let num of numbers) 
   {
-    if (isPrime(num)) 
-    {
-      primes.push(num);
+    if (!isNaN(parseInt(num, 10)))
+    {  
+      if (isPrime(num)) 
+      {
+        primes.push(num);
+      }
+      else
+      {
+        notPrimes.push(num);
+      }
     }
     else
-    {
-     notPrimes.push(num);
-    }
+      notDigit.push(num);
   }
     
   if (primes.length == 0)
@@ -37,13 +43,20 @@ function checkPrimes()
   {
     resultstr = primes.join(', ') + ' - простые числа ';    
   }
+
   if (notPrimes.length == 0 || notPrimes.includes(''))    
   {
-    resultstr = resultstr + 'и не простых чисел нет';
+    resultstr = resultstr + 'и нет не простых чисел нет ';
   }
   else
   {
-    resultstr = resultstr + ' - не простые числа ';    
+    resultstr = resultstr + notPrimes.join(', ') + ' - не простые числа ';    
   }
+
+  if (notDigit.length >= 1 && !notDigit.includes(''))    
+  {
+    resultstr = resultstr + 'и не числа: ' + notDigit.join(', ');
+  }
+
   result.textContent = resultstr;
 }

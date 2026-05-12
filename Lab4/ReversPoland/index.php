@@ -29,7 +29,7 @@
         {
           if (count($stack) < 2) 
           {
-            return "Ошибка: недостаточно операндов для операции '$elem'";
+            return "Недостаточно операндов для операции '$elem'";
           }
           $second = array_pop($stack);
           $first = array_pop($stack);    
@@ -44,13 +44,13 @@
               $result = $first * $second;
               break;
             case '/':
-              if ($second != 0) 
+              if ($second == 0) 
               {
-                $result = $first / $second;
+                return "Ошибка: деление на ноль";
               } 
               else 
               {
-                return "Ошибка: деление на ноль";
+                $result = $first / $second;
               }
               break;
             case '^':
