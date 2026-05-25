@@ -10,7 +10,7 @@ function applyOperation(first, operation, second)
     case '/':
       if (second == 0)
       {
-        console.warn('Делим на ноль')
+        console.log('Делим на ноль')
         return NaN;
       }
       else 
@@ -40,9 +40,9 @@ function compare(first, compSymb, second)
 }
 
 const numbers = [2, 5, 8, 10, 3];
-const operation = '*';
+const operation = '/';
 const compOperation = '<';
-const operationNum = 3;
+const operationNum = 0;
 const compNum = 10;
 
 let firstStep = [];

@@ -1,0 +1,110 @@
+.clear-border-in-body
+{
+    height: 100vh;      
+    margin: 0;
+    padding: 0;
+}
+
+.main-container 
+{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar-fild 
+{
+    display: flex;
+    flex-direction: column;
+    width: 72px;
+    height: 100%;       
+    /* background-color: brown; */
+}
+
+.pages-fild
+{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 15px;
+    height: 40px;
+    width: 40px;
+    /* background-color: black; */
+}
+
+.header-fild 
+{
+    display: flex;
+    width: 100%;      
+    height: 73px;
+    /* background-color: aqua; */
+}
+
+.smart-button
+{
+    height: 40px;
+    width: 40px;
+}
+
+.profile
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 93px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.user-avatar
+{
+    display: flex;
+    height: 123px;
+    width: 123px;
+    border-radius: 20px;  
+    object-fit: cover;
+}
+
+.user-name
+{
+    font: 500 32px Golos UI, sans-serif;
+    line-height: 32px;
+    letter-spacing: -0.25px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.about-me
+{
+    width: 361px;
+    padding-bottom: 10px;
+    font: 400 15px Regular, sans-serif;
+    color: #222222;  
+    text-align: center;
+}
+
+.post-count
+{
+    padding-bottom: 20px;    
+    height: 30px;
+    width: 101px;
+    gap: 6px;
+    border-radius: 6px;
+}
+
+.posts-fild
+{
+    display: flex;
+    width: 972px;
+    height: 100vh; 
+    flex-wrap: wrap;
+}
+
+.post-photo
+{
+    width: 322px;
+    height: 322px;
+    border-radius: 2px;
+    padding: 0 0 2px 2px;
+    object-fit: cover;
+}

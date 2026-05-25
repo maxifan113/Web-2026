@@ -44,7 +44,7 @@ function checkPrimes()
     resultstr = primes.join(', ') + ' - простые числа ';    
   }
 
-  if (notPrimes.length == 0 || notPrimes.includes(''))    
+  if (notPrimes.length == 0 || notPrimes.includes(''))
   {
     resultstr = resultstr + 'и нет не простых чисел нет ';
   }
