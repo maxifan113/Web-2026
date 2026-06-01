@@ -1,12 +1,6 @@
 <?php
-/**
- * Страница отдельного поста
- * 
- * @package SocialNetwork
- */
 
 $post_id = isset($_GET['postId']) ? (int) $_GET['postId'] : 0;
-
 
 $post = [
     'id'              => $post_id,

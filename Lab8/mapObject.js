@@ -8,8 +8,8 @@ function mapObject(obj, callBack)
   return result;
 }
 
-const nums = { a: 1, b: 2, c: 3 };
-const newNums = mapObject(nums, x => x * 2);
+const nums = { a: 1, b: 2, c: 9 };
+const newNums = mapObject(nums, x => x * 9);
 for (const key in newNums) 
 {
   console.log(newNums[key]);
