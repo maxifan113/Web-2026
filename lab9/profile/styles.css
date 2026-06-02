@@ -1,0 +1,96 @@
+.page {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/*контейнер всей страницы*/
+.page__container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/*боковое меню */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 72px;
+    height: 100%;
+}
+
+.sidebar__item {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 15px;
+    height: 40px;
+    width: 40px;
+}
+
+.sidebar__icon {
+    height: 40px;
+    width: 40px;
+}
+
+/*профиль пользователя*/
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 93px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.profile__avatar {
+    display: flex;
+    height: 123px;
+    width: 123px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.profile__name {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: -0.25px;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.profile__bio {
+    width: 361px;
+    padding-bottom: 10px;
+    font-weight: 400;
+    font-size: 15px;
+    color: #222222;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.profile__stats {
+    padding-bottom: 20px;
+    height: 30px;
+    width: 101px;
+    gap: 6px;
+    border-radius: 6px;
+}
+
+.profile__gallery {
+    display: flex;
+    width: 972px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.profile__photo {
+    width: 322px;
+    height: 322px;
+    border-radius: 2px;
+    object-fit: cover;
+}

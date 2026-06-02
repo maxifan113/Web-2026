@@ -8,83 +8,110 @@
     <h1>Определение знака зодиака</h1>
     <form method='POST'>
       <label for='date'>Укажите дату</label>
-      <input type='date' name='date' id='date' required>
+      <input type='text' name='date' id='date' required>
       <button type='submit'>Подтвердить</button>
       <a href="http://localhost/Lab4/">Вернуться</a>
     </form>
 
     <?php
-    function serchZodiac($day, $months): string
-    {
-      if (($months == 1 && $day >= 21 && $day <= 31) || ($months == 2 && $day <= 20))
-      {
+    function parseDate($dateString) {
+      $dateString = trim($dateString);
+      $dateString = str_replace(['-', '/', '.', ' '], '-', $dateString);
+      
+      $parts = explode('-', $dateString);
+      $parts = array_map('intval', $parts);
+      
+      if (count($parts) == 3) {
+        if ($parts[0] >= 32 && $parts[0] <= 9999) {
+          return getDayAndMonth($parts[1], $parts[2]);
+        } elseif ($parts[1] >= 32 && $parts[1] <= 9999) {
+          return getDayAndMonth($parts[0], $parts[2]);
+        } elseif ($parts[2] >= 32 && $parts[2] <= 9999) {
+          return getDayAndMonth($parts[0], $parts[1]);
+        }
+      } elseif (count($parts) == 2) {
+          return getDayAndMonth($parts[0], $parts[1]);
+      }
+      
+      return null;
+    }
+
+    function getDayAndMonth($first, $second) {
+      $first = (int)$first;
+      $second = (int)$second;
+      if ($first >= 1 && $first <= 12 && $second >= 1 && $second <= 31) {
+        return ['day' => $second, 'month' => $first];
+      } elseif ($second >= 1 && $second <= 12 && $first >= 1 && $first <= 31) {
+        return ['day' => $first, 'month' => $second];
+      }
+      return null;
+    }
+
+    function isValidDate($day, $month) {
+      if ($month < 1 || $month > 12) {
+        return false;
+      }
+      if ($day < 1 || $day > 31) {
+        return false;
+      }
+    return true;
+    }
+
+    function searchZodiac($day, $month): string {
+      if (($month == 1 && $day >= 21 && $day <= 31) || ($month == 2 && $day <= 20)) {
         return 'Водолей';
       }
-      if (($months == 2 && $day >= 21 && $day <= 28) || ($months == 3 && $day <= 20))
-      {
+      if (($month == 2 && $day >= 21 && $day <= 29) || ($month == 3 && $day <= 20)) {
         return 'Рыбы';
       }
-      if (($months == 3 && $day >= 21 && $day <= 31) || ($months == 4 && $day <= 20))
-      {
+      if (($month == 3 && $day >= 21 && $day <= 31) || ($month == 4 && $day <= 20)) {
         return 'Овен';
-      }
-      if (($months == 4 && $day >= 21 && $day <= 30) || ($months == 5 && $day <= 20))
-      {
+     }
+      if (($month == 4 && $day >= 21 && $day <= 30) || ($month == 5 && $day <= 20)) {
         return 'Телец';
       }
-      if (($months == 5 && $day >= 21 && $day <= 31) || ($months == 6 && $day <= 21))
-      {
+      if (($month == 5 && $day >= 21 && $day <= 31) || ($month == 6 && $day <= 21)) {
         return 'Близнецы';
       }
-      if (($months == 6 && $day >= 22 && $day <= 30) || ($months == 7 && $day <= 22))
-      {
+      if (($month == 6 && $day >= 22 && $day <= 30) || ($month == 7 && $day <= 22)) {
         return 'Рак';
       }
-      if (($months == 7 && $day >= 23 && $day <= 31) || ($months == 8 && $day <= 23))
-      {
+      if (($month == 7 && $day >= 23 && $day <= 31) || ($month == 8 && $day <= 23)) {
         return 'Лев';
       }
-      if (($months == 8 && $day >= 24 && $day <= 31) || ($months == 9 && $day <= 23))
-      {
+      if (($month == 8 && $day >= 24 && $day <= 31) || ($month == 9 && $day <= 23)) {
         return 'Дева';
       }
-      if (($months == 9 && $day >= 24 && $day <= 30) || ($months == 10 && $day <= 23))
-      {
+      if (($month == 9 && $day >= 24 && $day <= 30) || ($month == 10 && $day <= 23)) {
         return 'Весы';
       }
-      if (($months == 10 && $day >= 24 && $day <= 31) || ($months == 11 && $day <= 22))
-      {
+      if (($month == 10 && $day >= 24 && $day <= 31) || ($month == 11 && $day <= 22)) {
         return 'Скорпион';
       }
-      if (($months == 11 && $day >= 23 && $day <= 30) || ($months == 12 && $day <= 21))
-      {
+      if (($month == 11 && $day >= 23 && $day <= 30) || ($month == 12 && $day <= 21)) {
         return 'Стрелец';
       }
-      if (($months == 12 && $day >= 22 && $day <= 31) || ($months == 1 && $day <= 20))
-      {
+      if (($month == 12 && $day >= 22 && $day <= 31) || ($month == 1 && $day <= 20)) {
         return 'Козерог';
       }
-      else
-      {
-        return 'Некоректная дата';
-      }
+      return 'Не удалось определить знак зодиака';
     }
-    if ($_SERVER['REQUEST_METHOD'] == 'POST')
-    {
-      $date = $_POST['date'];
-      $dateInArr = explode('-', $date);
-      // Валидность даты
-      if (count($dateInArr) == 3)
-      {
-        $day = $dateInArr[2];
-        $months = $dateInArr[1];
-        $result = serchZodiac($day, $months);
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $dateString = $_POST['date'];
+      $parsedDate = parseDate($dateString);
+      if ($parsedDate !== null) {
+        $day = $parsedDate['day'];
+        $month = $parsedDate['month'];
+        if (isValidDate($day, $month)) {
+          $zodiac = searchZodiac($day, $month);
+          echo "Знак зодиака: $zodiac";
+        } else {
+            echo "Некорректные день или месяц (день: $day, месяц: $month)";
+        }
+      } else {
+        echo "Ошибка: Не удалось распознать дату";
       }
-      else
-      {
-        $result = 'Введена не коректная дата';
-      }
-      echo $result;
     }
     ?>
   </body>
