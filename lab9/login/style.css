@@ -14,12 +14,6 @@
     padding-right: 50px;
 }
 
-.login__image {
-    display: block;
-     width: 462px; 
-     height: 501px;
-}
-
 .login__title {
     position: absolute;
     top: -175px;

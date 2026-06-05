@@ -32,17 +32,11 @@ $posts = $stmt->fetchAll();
 <body class="page">
   <div class="layout">
     <nav class="layout__sidebar">
-      <div class="layout__sidebar-nav">
-        <img src="image/home-active.png" class="layout__sidebar-icon" alt="Home">
-      </div>
-      <div class="layout__sidebar-nav">
-        <a href="http://localhost/lab9/profile/">
-          <img src="image/profile.png" class="layout__sidebar-icon" alt="Profile">
-        </a>
-      </div>
-      <div class="layout__sidebar-nav">
-        <img src="image/plus.png" class="layout__sidebar-icon" alt="Add">
-      </div>
+      <img src="image/home-active.png" class="layout__sidebar-nav" alt="Home">
+      <a href="http://localhost/lab9/profile/">
+        <img src="image/profile.png" class="layout__sidebar-nav" alt="Profile">
+      </a>
+      <img src="image/plus.png" class="layout__sidebar-nav" alt="Add">
     </nav>
     
     <div class="layout__content">

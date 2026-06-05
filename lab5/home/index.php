@@ -1,32 +1,7 @@
 <?php
-
-$posts = [
-    [
-        'id'              => 1,
-        'author'          => 'Ваня Денисов',
-        'avatar'          => 'image/avatar1.jpg',
-        'image_url'       => 'image/lenta1.jpg',
-        'photo_count'     => 3,
-        'likes'           => 203,
-        'comment_text'    => 'Так красиво сегодня на улице! Настоящая зима)) Вспоминается Бродский: «Поздно ночью, в уснувшей долине, на самом дне...',
-        'has_more'        => true,
-        'publish_time'    => '2 часа назад',
-        'show_edit'       => true,
-    ],
-    [
-        'id'              => 2,
-        'author'          => 'Лиза Дёмина',
-        'avatar'          => 'image/avatar2.jpg',
-        'image_url'       => 'image/Lenta2.jpg',
-        'photo_count'     => 1,
-        'likes'           => 100,
-        'comment_text'    => 'Рыбки моей мечты',
-        'has_more'        => false,
-        'publish_time'    => 'Менее часа назад',
-        'show_edit'       => true,
-    ],
-];
+require_once 'data.php';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="ru">

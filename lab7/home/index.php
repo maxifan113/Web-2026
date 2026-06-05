@@ -1,30 +1,5 @@
 <?php
-// index.php - Новая версия с подключением к БД
-
-// Включаем ошибки для отладки
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-// Подключаем конфиг базы данных
-require_once 'config/database.php';
-
-// Получаем соединение с БД
-$db = Database::getInstance()->getConnection();
-
-// Загружаем посты из базы данных
-$stmt = $db->query("
-    SELECT 
-        p.*,
-        u.username as author,
-        u.avatar_url as avatar,
-        1 as show_edit
-    FROM posts p
-    INNER JOIN users u ON p.user_id = u.id
-    ORDER BY p.created_at DESC
-");
-
-$posts = $stmt->fetchAll();
+require_once 'get_posts.php';
 ?>
 
 <!DOCTYPE html>

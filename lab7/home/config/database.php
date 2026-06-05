@@ -20,7 +20,6 @@ class Database {
                 ]
             );
             
-            // ВАЖНО: принудительно устанавливаем кодировку
             $this->connection->exec("SET NAMES utf8mb4");
             $this->connection->exec("SET CHARACTER SET utf8mb4");
             

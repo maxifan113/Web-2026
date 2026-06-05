@@ -23,11 +23,6 @@
     width: 40px;
 }
 
-.layout__sidebar-icon {
-    height: 40px;
-    width: 40px;
-}
-
 .layout__content {
     display: flex;
     flex-direction: column;

@@ -1,28 +1,5 @@
 <?php
-
-$post_id = isset($_GET['postId']) ? (int) $_GET['postId'] : 0;
-
-$post = [
-    'id'              => $post_id,
-    'author'          => 'Ваня Денисов',
-    'avatar'          => 'image/avatar1.jpg',
-    'image_url'       => 'image/lenta1.jpg',
-    'photo_count'     => 3,
-    'likes'           => 203,
-    'comment_text'    => 'Так красиво сегодня на улице! Настоящая зима)) Вспоминается Бродский: «Поздно ночью, в уснувшей долине, на самом дне...',
-    'full_text'       => 'Так красиво сегодня на улице! Настоящая зима)) Вспоминается Бродский: «Поздно ночью, в уснувшей долине, на самом дне, звезды мерцают в промерзшей вышине, и луна сквозь туман пробивается еле-еле...» Каждый год жду этого момента! Снег, мороз и уютные вечера с книгой. А у вас какая погода?',
-    'has_more'        => true,
-    'publish_time'    => '2 часа назад',
-    'show_edit'       => true,
-    'comments_count'  => 18,
-    'views'           => 1245,
-];
-
-if ($post_id === 0) {
-    header('HTTP/1.0 404 Not Found');
-    echo '<h1>Пост не найден</h1>';
-    exit;
-}
+require_once 'get_post.php';
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +29,7 @@ if ($post_id === 0) {
     <div class="collum-fild">
       <div class="header-fild"></div>      
         <div class="post-container">
-          <a href="home.php" class="back-link">Назад к ленте</a>
+          <a href="index.php" class="back-link">Назад к ленте</a>
           <h1>Пост №<?=(int) $post['id']?></h1>
           <div class="post-fild">
             <div class="usser">
